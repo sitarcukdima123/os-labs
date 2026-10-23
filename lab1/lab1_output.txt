@@ -1,0 +1,212 @@
++ whoami
+codespace
++ uname -a
+Linux codespaces-84fcc1 6.8.0-1064-azure #72~22.04.1-Ubuntu SMP Wed Jul 22 23:39:45 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
++ uptime
+ 08:18:59 up 6 min,  0 user,  load average: 4.86, 5.13, 2.68
++ pwd
+/home/codespace/os-lab1
++ ls -la /
++ head -15
+total 100
+drwxr-xr-x    1 root      root   4096 Oct 23 08:18 .
+drwxr-xr-x    1 root      root   4096 Oct 23 08:18 ..
+drwxr-xr-x    3 root      root   4096 Oct 23 08:18 .codespaces
+-rwxr-xr-x    1 root      root      0 Oct 23 08:18 .dockerenv
+lrwxrwxrwx    1 root      root      7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x    2 root      root   4096 Apr 15  2026 bin.usr-is-merged
+drwxr-xr-x    2 root      root   4096 Apr 22  2024 boot
+drwxr-xr-x   14 root      root   3940 Oct 23 08:18 dev
+drwxr-xr-x    1 root      root   4096 Oct 23 08:18 etc
+drwxrwsr-x    3 codespace golang 4096 Sep 10 12:30 go
+drwxr-xr-x    1 root      root   4096 Oct 23 08:18 home
+lrwxrwxrwx    1 root      root      7 Apr 22  2024 lib -> usr/lib
+drwxr-xr-x    2 root      root   4096 Nov 14  2024 lib.usr-is-merged
+lrwxrwxrwx    1 root      root      9 Sep 10 12:16 lib32 -> usr/lib32
++ ls -la /home/codespace
+total 112
+drwxr-x--- 1 codespace codespace 4096 Oct 23 08:18 .
+drwxr-xr-x 1 root      root      4096 Oct 23 08:18 ..
+drwxrwxr-x 2 codespace codespace 4096 Sep 10 12:20 .anaconda
+-rw-r--r-- 1 codespace codespace  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 codespace codespace 5885 Sep 10 12:17 .bashrc
+drwxrwxr-x 1 codespace codespace 4096 Oct 23 08:18 .cache
+drwxrwxr-x 1 codespace codespace 4096 Sep 10 12:20 .conda
+drwxr-xr-x 1 codespace codespace 4096 Oct 23 08:18 .config
+drwx------ 3 codespace codespace 4096 Oct 23 08:18 .copilot
+lrwxrwxrwx 1 root      root        47 Oct 23 08:18 .docker -> /workspaces/.codespaces/.persistedshare/.docker
+lrwxrwxrwx 1 root      root        17 Sep 10 12:35 .dotnet -> /usr/share/dotnet
+-rw-r--r-- 1 codespace codespace  126 Oct 23 08:18 .gitconfig
+drwxr-xr-x 2 root      root      4096 Sep 10 12:35 .hugo
+drwxrwxr-x 2 codespace codespace 4096 Sep 10 12:35 .jupyter
+drwxrwxr-x 6 codespace codespace 4096 Sep 10 12:35 .local
+drwxr-xr-x 2 root      root      4096 Sep 10 12:35 .maven
+drwxr-xr-x 2 codespace root      4096 Sep 10 12:30 .minikube
+drwxrwxr-x 4 codespace codespace 4096 Sep 10 12:20 .npm
+drwxr-xr-x 1 codespace codespace 4096 Sep 10 12:30 .oh-my-zsh
+drwxrwxr-x 2 codespace codespace 4096 Sep 10 12:35 .php
+-rw-r--r-- 1 codespace codespace  807 Mar 31  2024 .profile
+drwxr-xr-x 2 root      root      4096 Sep 10 12:35 .python
+drwxr-xr-x 2 root      root      4096 Sep 10 12:35 .ruby
+drwxr-xr-x 5 codespace codespace 4096 Oct 23 08:18 .vscode-remote
+-rw-r--r-- 1 codespace codespace   22 Sep 10 12:17 .zprofile
+-rw-r--r-- 1 codespace codespace 4018 Sep 10 12:17 .zshrc
+lrwxrwxrwx 1 root      root        33 Sep 10 12:35 java -> /usr/local/sdkman/candidates/java
+lrwxrwxrwx 1 root      root        20 Sep 10 12:35 nvm -> /usr/local/share/nvm
+drwxr-xr-x 2 codespace codespace 4096 Oct 23 08:18 os-lab1
++ cd /etc
++ ls
++ head
+ODBCDataSources
+PackageKit
+X11
+adduser.conf
+alternatives
+apache2
+apparmor.d
+apt
+bash.bashrc
+bash_completion
++ cd /home/codespace/os-lab1
++ rm -rf demo
++ mkdir demo
++ cd demo
++ echo 'hello operating systems'
++ cp note.txt copy.txt
++ mv copy.txt renamed.txt
++ ls -l
+total 8
+-rw-r--r-- 1 codespace codespace 24 Oct 23 08:18 note.txt
+-rw-r--r-- 1 codespace codespace 24 Oct 23 08:18 renamed.txt
++ chmod 600 note.txt
++ ls -l
+total 8
+-rw------- 1 codespace codespace 24 Oct 23 08:18 note.txt
+-rw-r--r-- 1 codespace codespace 24 Oct 23 08:18 renamed.txt
++ rm renamed.txt
++ cd ..
++ ps aux
++ head
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+codespa+       1  0.0  0.0   1136   684 ?        Ss   08:18   0:00 /sbin/docker-init -- /bin/sh -c echo Container started trap "exit 0" 15 /usr/local/share/ssh-init.sh /usr/local/share/docker-init.sh exec "$@" while sleep 1 & wait $!; do :; done -
+codespa+       7  0.0  0.0   2800  1736 ?        S    08:18   0:00 /bin/sh -c echo Container started trap "exit 0" 15 /usr/local/share/ssh-init.sh /usr/local/share/docker-init.sh exec "$@" while sleep 1 & wait $!; do :; done -
+root         192  0.0  0.0  12016  2888 ?        Ss   08:18   0:00 sshd: /usr/sbin/sshd [listener] 0 of 10-100 startups
+root         230  0.2  0.6 1893116 49684 ?       Sl   08:18   0:00 /usr/bin/containerd --config /etc/containerd/config.toml
+root         424  2.2  1.2 2024396 98008 ?       Sl   08:18   0:00 dockerd --containerd /run/containerd/containerd.sock --dns 168.63.129.16
+codespa+     844  0.0  0.0   2800  1960 ?        Ss   08:18   0:00 /bin/sh
+root         869  0.0  0.0   2800  1972 ?        Ss   08:18   0:00 /bin/sh
+codespa+    1086  0.0  0.0   2800  1988 ?        Ss   08:18   0:00 /bin/sh
+codespa+    1469  0.0  0.0   2800  1804 pts/0    Ss+  08:18   0:00 /bin/sh -c [ -f /etc/devcontainer-copilot-cli/auto-update ] && copilot update || true
++ wc -l
++ ps aux
+29
++ ps -p 1 -o pid,comm
+    PID COMMAND
+      1 docker-init
++ PID=2499
++ sleep 300
++ ps -ef
++ grep sleep
++ grep -v grep
+codespa+       1       0  0 08:18 ?        00:00:00 /sbin/docker-init -- /bin/sh -c echo Container started trap "exit 0" 15 /usr/local/share/ssh-init.sh /usr/local/share/docker-init.sh exec "$@" while sleep 1 & wait $!; do :; done -
+codespa+       7       1  0 08:18 ?        00:00:00 /bin/sh -c echo Container started trap "exit 0" 15 /usr/local/share/ssh-init.sh /usr/local/share/docker-init.sh exec "$@" while sleep 1 & wait $!; do :; done -
+codespa+    2110    2109  0 08:18 pts/1    00:00:00 sleep 10s
+codespa+    2453    2450  0 08:18 ?        00:00:00 sleep 1
+codespa+    2456       7  0 08:18 ?        00:00:00 sleep 1
+codespa+    2499    2476  0 08:18 pts/1    00:00:00 sleep 300
++ head -20 /proc/2499/status
+Name:	sleep
+Umask:	0022
+State:	S (sleeping)
+Tgid:	2499
+Ngid:	0
+Pid:	2499
+PPid:	2476
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	256
+Groups:	986 987 988 989 990 991 992 993 994 995 996 1000 1001 
+NStgid:	2499
+NSpid:	2499
+NSpgid:	2476
+NSsid:	2101
+Kthread:	0
+VmPeak:	    6116 kB
+VmSize:	    6116 kB
+VmLck:	       0 kB
++ grep VmRSS /proc/2499/status
+VmRSS:	    2052 kB
++ kill 2499
++ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.8Gi       2.5Gi       184Mi        62Mi       5.4Gi       5.3Gi
+Swap:             0B          0B          0B
++ head -6 /proc/meminfo
+MemTotal:        8131876 kB
+MemFree:          188812 kB
+MemAvailable:    5514884 kB
+Buffers:          196784 kB
+Cached:          5280496 kB
+SwapCached:            0 kB
++ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+overlay          32G   18G   12G  60% /
+tmpfs            64M     0   64M   0% /dev
+shm              64M     0   64M   0% /dev/shm
+/dev/root        29G   13G   17G  45% /vscode
+/dev/sdc1        44G  2.0G   40G   5% /tmp
+/dev/loop4       32G   18G   12G  60% /workspaces
++ lsblk
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+loop0     7:0    0    74M  1 loop 
+loop1     7:1    0 115.3M  1 loop 
+loop2     7:2    0  50.1M  1 loop 
+loop3     7:3    0   257G  0 loop 
+loop4     7:4    0    32G  0 loop /home/vscode/.minikube
+                                  /var/lib/containerd
+                                  /var/lib/docker
+                                  /workspaces/.codespaces/.persistedshare
+                                  /etc/hosts
+                                  /etc/hostname
+                                  /etc/resolv.conf
+                                  /workspaces
+loop5     7:5    0   500M  0 loop 
+sda       8:0    0    30G  0 disk 
+├─sda1    8:1    0  29.9G  0 part /workspaces/.codespaces/shared
+│                                 /.codespaces/bin
+│                                 /vscode
+│                                 /usr/sbin/docker-init
+├─sda14   8:14   0     4M  0 part 
+└─sda15   8:15   0   106M  0 part 
+sdb       8:16   0   512G  0 disk 
+└─sdb1    8:17   0   512G  0 part 
+sdc       8:32   0    45G  0 disk 
+└─sdc1    8:33   0    45G  0 part /tmp
+sr0      11:0    1   628K  1 rom  
++ du -sh /home/codespace/os-lab1
+16K	/home/codespace/os-lab1
++ ls -l /dev
++ head
+total 0
+crw-r--r-- 1 root root     10, 235 Oct 23 08:18 autofs
+drwxr-xr-x 2 root root         120 Oct 23 08:18 bsg
+crw------- 1 root root     10, 234 Oct 23 08:18 btrfs-control
+lrwxrwxrwx 1 root root          11 Oct 23 08:18 core -> /proc/kcore
+crw------- 1 root root     10, 261 Oct 23 08:18 cpu_dma_latency
+crw------- 1 root root     10, 203 Oct 23 08:18 cuse
+drwxr-xr-x 2 root root          60 Oct 23 08:18 dma_heap
+drwxr-xr-x 2 root root          60 Oct 23 08:18 dri
+crw------- 1 root root     10, 258 Oct 23 08:18 ecryptfs
++ mount
++ head
+overlay on / type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/TGZ7P3ISVCYNGPA5MJWGMEBTOA:/var/lib/docker/overlay2/l/ZJQ5245WW4Q7A7CYK3P2SZYIMD:/var/lib/docker/overlay2/l/QAXJCL2DNKHR5CCD6DQC2LMWOI:/var/lib/docker/overlay2/l/O76VGHRRHDS6BJMZGYYOYU6J6E:/var/lib/docker/overlay2/l/COQXJ2XREH624H74URK4CVGXUC:/var/lib/docker/overlay2/l/ML2O6SDGWCC5TJX2EFYBST3N5B:/var/lib/docker/overlay2/l/ELYOP56KWROTLPAQSMLU6IKEBB:/var/lib/docker/overlay2/l/FPW77L3ZCBZNRRW7GTLVML4HMO:/var/lib/docker/overlay2/l/F6D5ZMBBNNCIETGPM3RUZK4F7W:/var/lib/docker/overlay2/l/2QDNJ3WTTHUB2EGTBWIKYUGXE3:/var/lib/docker/overlay2/l/TFSHNOLTZT6J4G5HVHJPS2O4A2:/var/lib/docker/overlay2/l/IESA3SYTHMX3WJRCPIKGLGQFBW:/var/lib/docker/overlay2/l/WEUKK4JTM33YFTNVNQBHXREXAU:/var/lib/docker/overlay2/l/3QVGGB5BKGQBNZVQY6V75HDJ74:/var/lib/docker/overlay2/l/EXPM3Y4PNKW5AIB3KU3S2DJY77:/var/lib/docker/overlay2/l/ER5HPNE5VXZYUFVCFRMM2IF3A3:/var/lib/docker/overlay2/l/T5TITQE2I2XTXY37YAVPDNABKG:/var/lib/docker/overlay2/l/6GL5DTSKK6GHFESR4E423ZVT7L:/var/lib/docker/overlay2/l/ZIQ7VJCSZ53KPD5JEM3CMIV2R7:/var/lib/docker/overlay2/l/YMAHWBML5WSQKSJYAA23EMPQMT:/var/lib/docker/overlay2/l/ZZMPRI3FNYA3IQLTOYXLCLMUIN:/var/lib/docker/overlay2/l/R5A7XXBOEGRC2JPFWKXWDEQ7CT:/var/lib/docker/overlay2/l/4NDQD2K5BPLULZZEIJQZGF5FFQ:/var/lib/docker/overlay2/l/MTPUTL7KJXDXPTSPR2ZMJST5M5:/var/lib/docker/overlay2/l/3KXALDXVJM5UU7HDAYRK6QUJVW:/var/lib/docker/overlay2/l/Z3GVQMJJNJZQJGDAN53PLTOIE3:/var/lib/docker/overlay2/l/YTOZCMPAF2PQB5EGJLYTZHQ4GD:/var/lib/docker/overlay2/l/JPRFBSZMTSALEBNBX77F5VMYPE:/var/lib/docker/overlay2/l/WTS3UUQI4A6HROUZPMI6KCWJU3:/var/lib/docker/overlay2/l/JBQX3Q2O3IFFEVEFDAVHS4MTFG:/var/lib/docker/overlay2/l/CAZGISGVDPUKDCJ4USIA5BQC3W:/var/lib/docker/overlay2/l/OJPTCDH5VWMIMLQ7Q5JPJBRWON,upperdir=/var/lib/docker/overlay2/4e6f22b3ae6ba0bcb26758ed45c55394601dc835dc2fe4601836213eec38e6e8/diff,workdir=/var/lib/docker/overlay2/4e6f22b3ae6ba0bcb26758ed45c55394601dc835dc2fe4601836213eec38e6e8/work,nouserxattr)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev type tmpfs (rw,nosuid,size=65536k,mode=755,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k,inode64)
+/dev/sda1 on /usr/sbin/docker-init type ext4 (ro,relatime,discard,errors=remount-ro)
+/dev/sdc1 on /tmp type ext4 (rw,relatime)

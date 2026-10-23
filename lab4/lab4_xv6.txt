@@ -1,0 +1,82 @@
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 3 -nographic -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+hart 1 starting
+hart 2 starting
+init: starting sh
+$ sleep 20
+$ sleep
+usage: sleep <ticks>
+$ echo hello > f ; cat < f
+hello
+$ ls | grep READ
+README         2 2 2441
+$ (echo a; echo b) | wc
+2 2 4 
+$ echo one ; echo two
+one
+two
+$ echo bg &
+$ bg
+ls *
+ls: cannot open *
+$ echo $HOME
+$HOME
+$ echo "a b"
+"a b"
+$ args *.c "x y"
+argc = 4
+argv[0] = [args]
+argv[1] = [*.c]
+argv[2] = ["x]
+argv[3] = [y"]
+$ args $HOME
+argc = 2
+argv[0] = [args]
+argv[1] = [$HOME]
+$ args 'single quoted'
+argc = 3
+argv[0] = [args]
+argv[1] = ['single]
+argv[2] = [quoted']
+$ args one   two      three
+argc = 4
+argv[0] = [args]
+argv[1] = [one]
+argv[2] = [two]
+argv[3] = [three]
+$ mkdir d
+$ cd d
+$ ls ..
+exec ls failed
+$ ../ls ..
+.              1 1 1024
+..             1 1 1024
+README         2 2 2441
+cat            2 3 35408
+echo           2 4 34344
+forktest       2 5 17312
+grep           2 6 42768
+init           2 7 34800
+kill           2 8 34272
+ln             2 9 34064
+ls             2 10 41552
+sleep          2 11 34064
+args           2 12 34056
+mkdir          2 13 34312
+rm             2 14 34296
+sh             2 15 56168
+stressfs       2 16 35192
+usertests      2 17 200088
+grind          2 18 50536
+wc             2 19 36368
+zombie         2 20 33680
+logstress      2 21 36216
+forphan        2 22 35080
+dorphan        2 23 34520
+sync           2 24 33744
+console        3 25 0
+f              2 26 6
+d              1 27 32
+$ 

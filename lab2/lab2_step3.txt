@@ -1,0 +1,82 @@
++ sed -n 1,40p user/ls.c
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "user/user.h"
+#include "kernel/fs.h"
+#include "kernel/fcntl.h"
+
+char *
+fmtname(char *path)
+{
+  static char buf[DIRSIZ + 1];
+  char *p;
+
+  // Find first character after last slash.
+  for (p = path + strlen(path); p >= path && *p != '/'; p--)
+    ;
+  p++;
+
+  // Return blank-padded name.
+  if (strlen(p) >= DIRSIZ)
+    return p;
+  memmove(buf, p, strlen(p));
+  memset(buf + strlen(p), ' ', DIRSIZ - strlen(p));
+  buf[sizeof(buf) - 1] = '\0';
+  return buf;
+}
+
+void
+ls(char *path)
+{
+  char buf[512], *p;
+  int fd;
+  struct dirent de;
+  struct stat st;
+
+  if ((fd = open(path, O_RDONLY)) < 0) {
+    fprintf(2, "ls: cannot open %s\n", path);
+    return;
+  }
+
+  if (fstat(fd, &st) < 0) {
++ sed -n 1,30p user/cat.c
+#include "kernel/types.h"
+#include "kernel/fcntl.h"
+#include "user/user.h"
+
+char buf[512];
+
+void
+cat(int fd)
+{
+  int n;
+
+  while ((n = read(fd, buf, sizeof(buf))) > 0) {
+    if (write(1, buf, n) != n) {
+      fprintf(2, "cat: write error\n");
+      exit(1);
+    }
+  }
+  if (n < 0) {
+    fprintf(2, "cat: read error\n");
+    exit(1);
+  }
+}
+
+int
+main(int argc, char *argv[])
+{
+  int fd, i;
+
+  if (argc <= 1) {
+    cat(0);
++ grep -n 'read\|write\|open\|close\|pause\|sleep' user/user.h
+10:int write(int, const void *, int);
+11:int read(int, void *, int);
+12:int close(int);
+15:int open(const char *, int);
+25:int pause(int);
++ grep -n 'sys_read\|sys_write' kernel/sysfile.c
++ head
+69:sys_read(void)
+83:sys_write(void)
